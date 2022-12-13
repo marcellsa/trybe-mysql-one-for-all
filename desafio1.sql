@@ -7,7 +7,7 @@ DROP DATABASE IF EXISTS SpotifyClone;
   CREATE TABLE plano(
       plano_id INT PRIMARY KEY AUTO_INCREMENT,
       assinatura VARCHAR(100) NOT NULL,
-      valor DECIMAL(5,2) NOT NULL,
+      valor DECIMAL(5,2) NOT NULL
   ) engine = InnoDB;
 
   CREATE TABLE usuario(
@@ -97,7 +97,7 @@ INSERT INTO album (album_titulo, lancamento, artista_id)
     ('Somewhere Far Beyond', 2007, 5),
     ('I Put A Spell On You', 2012, 6);
 
-INSERT INTO musica (musica_titulo, ducarcao, album_id)
+INSERT INTO musica (musica_titulo, duracao, album_id)
   VALUES
     ('BREAK MY SOUL', 279, 1),
     ('VIRGO’S GROOVE', 369, 1),
