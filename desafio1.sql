@@ -7,7 +7,7 @@ DROP DATABASE IF EXISTS SpotifyClone;
   CREATE TABLE plano(
       plano_id INT PRIMARY KEY AUTO_INCREMENT,
       assinatura VARCHAR(100) NOT NULL,
-      valor DOUBLE NOT NULL,
+      valor DECIMAL(5,2) NOT NULL,
   ) engine = InnoDB;
 
   CREATE TABLE usuario(
@@ -21,13 +21,13 @@ DROP DATABASE IF EXISTS SpotifyClone;
 
   CREATE TABLE artista(
       artista_id INT PRIMARY KEY AUTO_INCREMENT,
-      artista_nome VARCHAR(100) NOT NULL,
+      artista_nome VARCHAR(100) NOT NULL
   ) engine = InnoDB;
 
   CREATE TABLE album(
       album_id INT PRIMARY KEY AUTO_INCREMENT,
       album_titulo VARCHAR(100) NOT NULL,
-      lancamento YEAR NOT NULL,
+      lancamento INT NOT NULL,
       artista_id INT NOT NULL,
       FOREIGN KEY (artista_id) REFERENCES artista(artista_id)
   ) engine = InnoDB;
@@ -44,7 +44,7 @@ DROP DATABASE IF EXISTS SpotifyClone;
       usuario_id INT NOT NULL,
       artista_id INT NOT NULL,
       CONSTRAINT PRIMARY KEY (usuario_id, artista_id),
-      FOREIGN KEY (usuario_id) REFERENCES usuario(usuario_id)
+      FOREIGN KEY (usuario_id) REFERENCES usuario(usuario_id),
       FOREIGN KEY (artista_id) REFERENCES artista(artista_id)
   ) engine = InnoDB;
 
@@ -53,7 +53,7 @@ DROP DATABASE IF EXISTS SpotifyClone;
       usuario_id INT NOT NULL,
       musica_id INT NOT NULL,
       CONSTRAINT PRIMARY KEY (usuario_id, musica_id),
-      FOREIGN KEY (usuario_id) REFERENCES usuario(usuario_id)
+      FOREIGN KEY (usuario_id) REFERENCES usuario(usuario_id),
       FOREIGN KEY (musica_id) REFERENCES musica(musica_id)
   ) engine = InnoDB;
 
@@ -75,14 +75,14 @@ DROP DATABASE IF EXISTS SpotifyClone;
     ('Bell Hooks', 26, '2018-01-05', 2),
     ('Christopher Alexander', 85, '2019-06-05', 3),
     ('Judith Butler', 45, '2020-05-13', 3),
-    ('JOrge Amado', 58, '2017-02-17', 3);
+    ('Jorge Amado', 58, '2017-02-17', 3);
 
   INSERT INTO artista (artista_nome)
   VALUES
     ('Beyoncé'),
     ('Queen'),
-    ('Elis Regina')
-    ('Baco Exu do Blues')
+    ('Elis Regina'),
+    ('Baco Exu do Blues'),
     ('Blind Guardian'),
     ('Nina Simone');
 
@@ -90,8 +90,8 @@ INSERT INTO album (album_titulo, lancamento, artista_id)
   VALUES
     ('Renaissance', 2022, 1),
     ('Jazz', 1978, 2),
-    ('Hot Space', 1982, 2)
-    ('Falso Brilhante', 1998, 3)
+    ('Hot Space', 1982, 2),
+    ('Falso Brilhante', 1998, 3),
     ('Vento de Maio', 2001, 3),
     ('QVVJFA?', 2003, 4),
     ('Somewhere Far Beyond', 2007, 5),
@@ -103,8 +103,8 @@ INSERT INTO musica (musica_titulo, ducarcao, album_id)
     ('VIRGO’S GROOVE', 369, 1),
     ('ALIEN SUPERSTAR', 116, 1),
     ('Don’t Stop Me Now', 203, 2),
-    ('Under Pressure', 152, 2)
-    ('Como Nossos Pais', 105, 3)
+    ('Under Pressure', 152, 2),
+    ('Como Nossos Pais', 105, 3),
     ('O Medo de Amar é o Medo de Ser Livre', 207, 3),
     ('Samba em Paris', 267, 4),
     ('The Bard’s Song', 244, 5),

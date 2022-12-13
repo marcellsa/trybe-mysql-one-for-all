@@ -3,7 +3,7 @@
   "coluna_usuario": "usuario_nome",
   "tabela_plano": "plano",
   "coluna_plano": "assinatura",
-  "tabela_historico_de_reproducoes": "historico_reproduçao",
+  "tabela_historico_de_reproducoes": "historico_reproducao",
   "coluna_historico_de_reproducoes": "musica_id",
   "tabela_seguindo_artistas": "seguindo_artista",
   "coluna_seguindo_artistas": "artista_id",
