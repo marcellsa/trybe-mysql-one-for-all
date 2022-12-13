@@ -116,14 +116,15 @@ INSERT INTO seguindo_artista (usuario_id , artista_id)
     (1, 2),
     (1, 3),
     (2, 1),
-    (2, 2),
+    (2, 3),
     (3, 3),
     (4, 4),
     (5, 5),
     (5, 6),
     (6, 6),
     (6, 1),
-    (7, 1),
+    (7, 6),
+    (9, 3),
     (10, 2);
 
 INSERT INTO historico_reproducao (data_reproducao, usuario_id , musica_id)
