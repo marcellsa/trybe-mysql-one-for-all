@@ -117,7 +117,7 @@ INSERT INTO seguindo_artista (usuario_id , artista_id)
     (1, 3),
     (2, 1),
     (2, 3),
-    (3, 3),
+    (3, 2),
     (4, 4),
     (5, 5),
     (5, 6),
